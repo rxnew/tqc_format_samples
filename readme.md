@@ -39,8 +39,8 @@ The following is the basic ICPM (Initialization Cnot Pin Measurement) format.
 ```
 
 Examples of \<initialization type\> are "Z", "-Z", "X", "-X", "Y", "A", etc.  
-Examples of \<operation type\> are "cnot", "p", "t", etc.
-The operations other than cnot correspond to pins, and the operation name corresponds to the module circuit id.
+Examples of \<operation type\> are "cnot", "x", "p", "t", etc.
+The operations other than cnot and Pauli operation correspond to pins, and the operation name corresponds to the module circuit id.
   
 When describing multiple circuits in one file, write as follows.
 
@@ -92,11 +92,19 @@ When describing the ICM (Initialization Cnot Measurement) circuit, write it as f
                 "controls": [<control bit> (it must be one)],
                 "targets" : [<target bit>, ...]
             }, ...
+        ],
+        "pauli_products": [
+            {
+                "bit" : <target bit>,
+                "type": "<pauli product>"
+            }, ...
         ]
     }
 }
 ```
 
+Examples of \<pauli product\> are "x", "z", "xz", etc.
+  
 When describing the TQEC (Topologically Quantum Error Corrected) geometory circuit, write it as follows.
 
 ```
