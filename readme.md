@@ -29,7 +29,7 @@ The following is the basic TQEC format.
             {
                 "type": "<operation type>",
                 "bits": {
-                    "controls": [<control bit>, ...]
+                    "controls": [<control bit>, ...],
                     "targets" : [<target bit>, ...]
                 }
             }
@@ -45,6 +45,9 @@ The following is the basic TQEC format.
 }
 ```
 
+Examples of \<initialization type\> are "Z", "-Z", "X", "-X", "Y", "A", etc.  
+Examples of \<operation type\> are "braiding", "P", "T", etc.
+  
 When describing multiple circuits in one file, write as follows.
 
 ```
@@ -89,7 +92,7 @@ When describing the ICM circuit, write it as follows.
         ],
         "cnots": [
             {
-                "controls": [<control bit> (it must be one)]
+                "controls": [<control bit> (it must be one)],
                 "targets" : [<target bit>, ...]
             }
         ]
