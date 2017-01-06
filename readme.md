@@ -4,7 +4,7 @@ This repository is ~.
 
 Format
 ---------------
-'''
+```
 {
     "format": "tqec",
     "circuit": {
@@ -41,4 +41,4 @@ Format
         ]
     }
 }
-'''
+```
