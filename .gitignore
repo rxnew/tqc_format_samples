@@ -1,0 +1,7 @@
+*.[a|o]
+*~
+\#*\#
+*.bak
+.DS_Store
+gitflow/
+!.gitkeep
