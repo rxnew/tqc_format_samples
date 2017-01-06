@@ -1,4 +1,4 @@
-TQEC format samples
+TQC format samples
 ==============
 This repository is a place for sample files in TQC format.
 
@@ -33,21 +33,14 @@ The following is the basic ICPM (Initialization Cnot Pin Measurement) format.
                     "targets" : [<target bit>, ...]
                 }
             }, ...
-        ],
-        "modules": [
-            {
-                "id"    : "<module circuit id>",
-                "size"  : [<x>, <y>, <z>],
-                "number": <number of the module template>
-            }, ...
         ]
     }
 }
 ```
 
 Examples of \<initialization type\> are "Z", "-Z", "X", "-X", "Y", "A", etc.  
-Examples of \<operation type\> are "CNOT", "P", "T", etc.
-Gates other than CNOT correspond to pins.
+Examples of \<operation type\> are "cnot", "p", "t", etc.
+The operations other than cnot correspond to pins, and the operation name corresponds to the module circuit id.
   
 When describing multiple circuits in one file, write as follows.
 
@@ -56,15 +49,18 @@ When describing multiple circuits in one file, write as follows.
     "format": "icpm",
     "circuits": {
         "main": {
-            "modules": [
+            "operations": [
                 {
-                    "id"    : "cv",
-                    "size"  : [10, 20, 20],
-                    "number": 1
-                }
-            ]
+                    "type": "cv",
+                    "bits": {
+                        "controls": [<control bit>],
+                        "targets" : [<target bit>]
+                    }
+                }, ...
+            ], ...
         },
         "cv": {
+            ...
         }
     }
 }
