@@ -25,13 +25,11 @@ The following is the basic ICPM (Initialization Cnot Pin Measurement) format.
                 "type": "<measurement type (basis)>"
             }, ...
         ],
-        "operations": [
+        "gates": [
             {
-                "type": "<operation type>",
-                "bits": {
-                    "controls": [<control bit>, ...],
-                    "targets" : [<target bit>, ...]
-                }
+                "type": "<gate type>",
+                "controls": [<control bit>, ...],
+                "targets" : [<target bit>, ...]
             }, ...
         ]
     }
@@ -39,8 +37,9 @@ The following is the basic ICPM (Initialization Cnot Pin Measurement) format.
 ```
 
 Examples of \<initialization type\> are "z", "-z", "x", "-x", "y", "a", etc.  
-Examples of \<operation type\> are "cnot", "x", "p", "t", etc.
-The operations other than cnot and Pauli operation correspond to pins, and the operation name corresponds to the module circuit id.
+Examples of \<measurement type\> are "z", "x", "z/x", etc.  
+Examples of \<gate type\> are "cnot", "x", "p", "t", etc.
+The gates other than cnot and Pauli gate correspond to pins, and the gate name corresponds to the module circuit id.
   
 When describing multiple circuits in one file, write as follows.
 
@@ -49,13 +48,11 @@ When describing multiple circuits in one file, write as follows.
     "format": "icpm",
     "circuits": {
         "main": {
-            "operations": [
+            "gates": [
                 {
                     "type": "cv",
-                    "bits": {
-                        "controls": [<control bit>],
-                        "targets" : [<target bit>]
-                    }
+                    "controls": [<control bit>],
+                    "targets" : [<target bit>]
                 }, ...
             ], ...
         },

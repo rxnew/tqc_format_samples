@@ -51,45 +51,33 @@
         "operations": [
             {
                 "type": "cnot",
-                "bits": {
-                    "controls": [1],
-                    "targets" : [0]
-                }
+                "controls": [1],
+                "targets" : [0]
             },
             {
                 "type": "cnot",
-                "bits": {
-                    "controls": [1],
-                    "targets" : [2]
-                }
+                "controls": [1],
+                "targets" : [2]
             },
             {
                 "type": "cnot",
-                "bits": {
-                    "controls": [3],
-                    "targets" : [1]
-                }
+                "controls": [3],
+                "targets" : [1]
             },
             {
                 "type": "cnot",
-                "bits": {
-                    "controls": [4],
-                    "targets" : [3]
-                }
+                "controls": [4],
+                "targets" : [3]
             },
             {
                 "type": "cnot",
-                "bits": {
-                    "controls": [3],
-                    "targets" : [5]
-                }
+                "controls": [3],
+                "targets" : [5]
             },
             {
                 "type": "cnot",
-                "bits": {
-                    "controls": [4],
-                    "targets" : [5]
-                }
+                "controls": [4],
+                "targets" : [5]
             }
         ]
     }

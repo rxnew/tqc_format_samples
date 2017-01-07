@@ -11,47 +11,33 @@
         "operations": [
             {
                 "type": "t*",
-                "bits": {
-                    "targets" : [0]
-                }
+                "targets" : [0]
             },
             {
                 "type": "h",
-                "bits": {
-                    "targets" : [1]
-                }
+                "targets" : [1]
             },
             {
                 "type": "cnot",
-                "bits": {
-                    "controls": [1],
-                    "targets" : [0]
-                }
+                "controls": [1],
+                "targets" : [0]
             },
             {
                 "type": "t",
-                "bits": {
-                    "targets" : [0]
-                }
+                "targets" : [0]
             },
             {
                 "type": "t*",
-                "bits": {
-                    "targets" : [1]
-                }
+                "targets" : [1]
             },
             {
                 "type": "cnot",
-                "bits": {
-                    "controls": [1],
-                    "targets" : [0]
-                }
+                "controls": [1],
+                "targets" : [0]
             },
             {
                 "type": "h",
-                "bits": {
-                    "targets" : [1]
-                }
+                "targets" : [1]
             }
         ]
     }
