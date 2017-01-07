@@ -4,11 +4,11 @@ This repository is a place for sample files in TQC format.
 
 Format
 ---------------
-The following is the basic ICPM (Initialization Cnot Pin Measurement) format.
+The following is the basic QC (Quantum Circuit) format.
 
 ```
 {
-    "format": "icpm",
+    "format": "qc",
     "circuit": {
         "bits"   : [<bit>, ...],
         "inputs" : [<external input bit>, ...],
@@ -27,7 +27,7 @@ The following is the basic ICPM (Initialization Cnot Pin Measurement) format.
         ],
         "gates": [
             {
-                "type": "<gate type>",
+                "type": "<gate type>",
                 "controls": [<control bit>, ...],
                 "targets" : [<target bit>, ...]
             }, ...
@@ -38,31 +38,48 @@ The following is the basic ICPM (Initialization Cnot Pin Measurement) format.
 
 Examples of \<initialization type\> are "z", "-z", "x", "-x", "y", "a", etc.  
 Examples of \<measurement type\> are "z", "x", "z/x", etc.  
-Examples of \<gate type\> are "cnot", "x", "p", "t", etc.
-The gates other than cnot and Pauli gate correspond to pins, and the gate name corresponds to the module circuit id.
+Examples of \<gate type\> are "x", "p", "t", etc.
   
-When describing multiple circuits in one file, write as follows.
+The following is the basic ICPM (Initialization Cnot Pin Measurement) format.
 
 ```
 {
     "format": "icpm",
     "circuits": {
-        "main": {
-            "gates": [
-                {
-                    "type": "cv",
-                    "controls": [<control bit>],
-                    "targets" : [<target bit>]
-                }, ...
-            ], ...
-        },
-        "cv": {
-            ...
-        }
+        "bits"   : [<bit>, ...],
+        "inputs" : [<external input bit>, ...],
+        "outputs": [<external output bit>, ...],
+        "initializations": [
+            {
+                "bit" : <initialization bit>,
+                "type": "<initialization type>"
+            }, ...
+        ],
+        "measurements": [
+            {
+                "bit" : <measurement bit>,
+                "type": "<measurement type (basis)>"
+            }, ...
+        ],
+        "operations": [
+            {
+                "type"    : "cnot",
+                "controls": [<control bit>  (it must be one)],
+                "targets" : [<target bit>]
+            },
+            {
+                "type"    : "pin",
+                "module"  : "<connected module id>",
+                "controls": [<control bit>],
+                "targets" : [<target bit>]
+            }, ...
+        ]
     }
 }
 ```
 
+The operations other than cnot and Pauli gate correspond to pins.
+  
 When describing the ICM (Initialization Cnot Measurement) circuit, write it as follows.
 
 ```

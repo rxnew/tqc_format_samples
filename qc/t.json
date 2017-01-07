@@ -1,5 +1,5 @@
 {
-    "format": "icpm",
+    "format": "qc",
     "circuit": {
         "bits"   : [0, 1, 2, 3, 4, 5],
         "inputs" : [0],
@@ -48,34 +48,34 @@
                 "type": "z/x"
             }
         ],
-        "operations": [
+        "gates": [
             {
-                "type": "cnot",
+                "type": "x",
                 "controls": [1],
                 "targets" : [0]
             },
             {
-                "type": "cnot",
+                "type": "x",
                 "controls": [1],
                 "targets" : [2]
             },
             {
-                "type": "cnot",
+                "type": "x",
                 "controls": [3],
                 "targets" : [1]
             },
             {
-                "type": "cnot",
+                "type": "x",
                 "controls": [4],
                 "targets" : [3]
             },
             {
-                "type": "cnot",
+                "type": "x",
                 "controls": [3],
                 "targets" : [5]
             },
             {
-                "type": "cnot",
+                "type": "x",
                 "controls": [4],
                 "targets" : [5]
             }
